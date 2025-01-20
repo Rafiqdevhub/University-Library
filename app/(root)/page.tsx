@@ -1,20 +1,20 @@
 import BookList from "@/components/BookList";
 import BookOverview from "@/components/BookOverview";
-import { Button } from "@/components/ui/button";
 import { sampleBooks } from "@/constants";
 
-const page = () => {
+const Home = () => {
+  const latestBooks = sampleBooks.slice(0, 4) as Book[];
   return (
     <>
-      <BookOverview {...sampleBooks} />
+      <BookOverview {...latestBooks[0]} />
 
       <BookList
         title="Latest Books"
-        books="sampleBooks"
+        books={latestBooks}
         containerClassName="mt-28"
       />
     </>
   );
 };
 
-export default page;
+export default Home;
